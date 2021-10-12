@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap");
+      * {
+        padding: 0;
+        margin: 0;
+        font-family: "Quicksand", sans-serif;
+      }
+      body {
+        background: #262626;
+      }
+      .box {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(-30deg) skewX(22deg);
+        width: 300px;
+        height: 300px;
+        background: url(painting/elephant-24722.png);
+        background-size: 300px 300px;
+        transition: 0.5s;
+        cursor: pointer;
+      }
+      .box:hover {
+        transform: translate(-50%, -50%);
+        cursor: pointer;
+      }
+      .box::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -40px;
+        width: 40px;
+        height: 100%;
+        background: linear-gradient(90deg, #f00, #262626);
+        transform-origin: right;
+        transform: skewY(-45deg);
+        animation: animateBefore 1s infinite linear;
+        transition: 0.5s;
+        cursor: pointer;
+      }
+      .box::after {
+        content: "";
+        position: absolute;
+        bottom: -40px;
+        left: 0;
+        width: 100%;
+        height: 40px;
+        background: linear-gradient(0deg, #f00, #262626);
+        transform-origin: top;
+        transform: skewX(-45deg);
+        animation: animateAfter 2s infinite linear;
+        transition: 0.5s;
+        
+      }
+
+      .box:hover::before {
+        transform: skewY(-45deg) rotateY(90deg);
+       
+        
+      }
+      .box:hover::after {
+        transform: skewX(-45deg) rotateX(90deg);
+        
+        
+      }
+      @keyframes animateBefore {
+        0% {
+          box-shadow: -20px 0 60px 20px #f00;
+        }
+        25% {
+          box-shadow: -20px 0 60px 24px #f00;
+        }
+        50% {
+          box-shadow: -20px 0 60px 20px #f00;
+        }
+        75% {
+          box-shadow: -20px 0 100px 40px #f00;
+        }
+        100% {
+          box-shadow: -20px 0 60px 20px #f00;
+        }
+      }
+
+      @keyframes animateAfter {
+        0% {
+          box-shadow: 0 20px 60px 10px #f00;
+        }
+        25% {
+          box-shadow: 0 20px 60px 15px #f00;
+        }
+        50% {
+          box-shadow: 0 20px 60px 10px #f00;
+        }
+        75% {
+          box-shadow: 0 20px 100px 30px #f00;
+        }
+        100% {
+          box-shadow: 0 20px 60px 10px #f00;
+        }
+      }
+    </style>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="box"></div>
+  </body>
+</html>
